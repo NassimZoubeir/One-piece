@@ -126,3 +126,12 @@ h1 {
 h2, h3,.video-wrapper, .resume {
   text-align: center;
 }
+/* .welcome-section {
+ background-image: url(/images/one_piece_stampede.jpg);
+ background-size: contain;
+} */
+/* ---------------------------- SECTION 2 -----------------------------------*/ 
+.character-section {
+  display: flex;
+  justify-content: center;
+}
