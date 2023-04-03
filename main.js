@@ -53,3 +53,23 @@ fetch("https://api.api-onepiece.com/characters")
       }
     });
   });
+
+
+  /*------------------------------------------- API 2 ----------------------------------------------*/
+//  // Connection à l'API //
+//  fetch("https://api.jikan.moe/v4/manga/13/characters")
+//  .then((response) => response.json())
+//  .then((result) => console.log(result));
+
+//  fetch("https://api.jikan.moe/v4/manga/13/characters")
+//  .then((response) => response.json())
+//  .then((data) => {
+//    const result = data.data;
+//    const select = document.querySelector("#character-select");
+//    result.forEach((character) => {
+//      const option = document.createElement("option");
+//      option.value = character.mal_id;
+//      option.text = character.character.name;
+//      select.appendChild(option);
+//    });
+//  });
