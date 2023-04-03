@@ -1,132 +1,157 @@
-body {
+*{
+  text-decoration: none;
+  list-style: none;
+}
+ body {
   margin: 0;
   padding: 0;
-  cursor: url('/images/fruit-du-demon-.png'), auto;
 }
 
-nav {
+.nav-menu {
   background-color: #404040;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   width: 100%;
+  height: 100px;
   box-sizing: border-box;
 
 }
+ .nav-menu img {
+  height: 4em;
+} 
+.title {
+  margin-right: 30em;
+} 
 
+.burger {
+  width: 35px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 7%;
+  right: 3%;
+
+}
+
+.burger span {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.683);
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.5s ease-in-out;
+
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.891);
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.burger span::before {
+  transform: translateY(-10px);
+
+}
+
+.burger span::after {
+  transform: translateY(10px);
+}
+
+.burger.active span {
+  background-color: transparent;
+}
+
+.burger.active span::before {
+  transform: translateY(0px) rotateZ(45deg);
+
+}
+
+.burger.active span::after {
+  transform: translateY(0px) rotateZ(-45deg);
+}
+
+.burger {
+  display: none;
+}
+
+.nav-menu {
+
+  padding: 3em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: rgba(255, 255, 255, 0.893);
+  font-size: 20px;
+}
+
+.nav-menu .nav-link ul {
+  display: flex;
+}
+.nav-menu .nav-link li {
+  margin: 0 25px;
+
+}
+.nav-link {
+  margin-left: -100%;
+}
+
+@media screen and (max-width:800px) {
+
+  .nav-link {
+      display: none;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background-color: rgba(242, 229, 242, 0.457);
+      backdrop-filter: blur(7px);
+      width: 100%;
+      height: 100vh;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease;
+  }
+  .nav-link.mobile-menu {
+      margin-left: 0;
+  }
+  .nav-menu .nav-link ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .nav-menu .burger {
+      display: block;
+  }
+  .nav-menu .nav-link li {
+      margin: 25px 0;
+      font-size: 1.5em;
+  }
+}
+
+/* ------------------------------ SECTION 1 --------------------------------- */
 h1 {
   text-align: center;
   color: white;
 }
-
-.navbar-logo img {
-  height: 5em;
-}
-
-.navbar-menu ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-menu li {
-  margin: 0 10px;
-}
-
-.navbar-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.navbar-burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 25px;
-  cursor: pointer;
-}
-
-.navbar-burger span {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  transition: all 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none;
-  }
-
-  .navbar-burger {
-    display: flex;
-  }
-
-  .navbar-burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .navbar-burger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar-burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  .navbar-burger:hover span {
-    background-color: #333;
-  }
-
-  .navbar-burger.active:hover span {
-    background-color: white;
-  }
-
-  .navbar-burger.active:hover span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .navbar-burger.active:hover span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar-burger.active:hover span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  nav.active .navbar-menu {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    z-index: 999;
-  }
-
-  nav.active .navbar-menu ul {
-    flex-direction: column;
-  }
-
-  nav.active .navbar-menu li {
-    margin: 10px 0;
-  }
-  
-  nav.active .navbar-menu a {
-    color: white;
-  }
-  h2, h3, .resume {
-    font-size: 1em;
-  }
-}
-/* ------------------------------ SECTION 1 --------------------------------- */
-.welcome-section {
+ .welcome-section {
   margin-bottom: 50px;
 }
 h2, h3,.video-wrapper, .resume {
@@ -222,5 +247,10 @@ h3 {
     margin-top: 1em;
     margin-bottom: -10em;
   }
+  h1,h2, h3 {
+    font-size: 2em;
+  } 
+  .resume {
+    font-size: 1.2em;
+  }
 }
-
