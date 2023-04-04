@@ -87,6 +87,7 @@ body {
 .nav-menu a {
   color: rgba(255, 255, 255, 0.893);
   font-size: 20px;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .nav-menu .nav-link ul {
@@ -157,16 +158,19 @@ h2,h3,.video-wrapper,.resume {
 h2 {
   margin-bottom: 30px;
   font-size: 2em;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 h3 {
   margin-top: 50px;
   font-size: 1.5em;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .resume {
   margin-top: -20px;
   font-size: 1.4em;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .affiche {
@@ -174,6 +178,7 @@ h3 {
   margin: 0 auto;
   height: 400px;
   width: 350px;
+  animation: scale-in-hor-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 
@@ -201,6 +206,7 @@ h3 {
   left: 0;
   width: 80%;
   height: 90%;
+  animation: scale-in-hor-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* ---------------------------- SECTION 2 PERSONNAGES -----------------------------------*/
@@ -238,11 +244,13 @@ h3 {
   display: block;
   height: 300px;
   width: 100%;
+  animation: scale-in-hor-left 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .sunny {
   height: 15em;
   margin-bottom: -10em;
+  animation: scale-in-hor-left 10s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @media only screen and (max-width: 768px) {
@@ -274,6 +282,7 @@ h3 {
 /* ------------------------------------ SECTION 3 SHOP -------------------------------------------- */
 .shop,h1 {
   text-align: center;
+  animation: rotate-in-hor 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .grid-container2 {
@@ -352,11 +361,14 @@ h3 {
   margin-top: 1em;
   margin-right: 80%;
   margin-bottom: -7em;
+  animation: scale-in-hor-left 10s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
 }
 .mer2 {
   display: block;
   height: 200px;
   width: 100%;
+  animation: scale-in-hor-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* ---------------------------- SECTION 4 CONTACT ------------------------- */
@@ -366,6 +378,7 @@ h3 {
   background-size: cover;
   background-position: center;
   height: 50em;
+  animation: rotate-in-hor 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .form-container {
@@ -432,5 +445,90 @@ footer {
   .container {
     max-width: 100%;
     padding: 0 20px;
+  }
+}
+
+/* -------------------------------------------ANIMATION-------------------------- */
+ /* TEXT */
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+/* VIDEO ET BATEAU */ 
+@-webkit-keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+/* ----------- GRID ----------------*/
+@-webkit-keyframes rotate-in-hor {
+  0% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-hor {
+  0% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    opacity: 1;
   }
 }
