@@ -238,6 +238,7 @@ h3 {
   width: 100%;
 }
 .mer {
+  display: block;
   height: 300px;
   width: 100%;
 }

@@ -44,6 +44,7 @@ fetch("https://api.api-onepiece.com/characters")
         // Afficher les informations du personnage
         characterInfo.innerHTML = `
           <h3>${selectedCharacter.french_name}</h3>
+          <img src="https://api.jikan.moe/v4/manga/13/characters/${selectedCharacter.api_id}/image" alt="${selectedCharacter.french_name}">
           <p>Âge : ${selectedCharacter.age}</p>
           <p>Job : ${selectedCharacter.job}</p>
           <p>Bounty : ${selectedCharacter.bounty} Berry</p>
@@ -59,21 +60,10 @@ fetch("https://api.api-onepiece.com/characters")
   });
 
 
+
   /*------------------------------------------- API 2 ----------------------------------------------*/
-//  // Connection à l'API //
+ // Connection à l'API //
 //  fetch("https://api.jikan.moe/v4/manga/13/characters")
 //  .then((response) => response.json())
 //  .then((result) => console.log(result));
 
-//  fetch("https://api.jikan.moe/v4/manga/13/characters")
-//  .then((response) => response.json())
-//  .then((data) => {
-//    const result = data.data;
-//    const select = document.querySelector("#character-select");
-//    result.forEach((character) => {
-//      const option = document.createElement("option");
-//      option.value = character.mal_id;
-//      option.text = character.character.name;
-//      select.appendChild(option);
-//    });
-//  });
