@@ -334,3 +334,56 @@ h3 {
   margin-bottom: -10em;
 }
 /* ---------------------------- SECTION 4 ------------------------- */
+
+.form-section {
+  background-image: url("/images/one-piece-personnage.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50em;
+}
+
+.form-container {
+  padding: 15.2em;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -10em;
+  padding: 30px;
+}
+
+label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0052a3;
+}
+@media only screen and (max-width: 767px) {
+  form {
+    margin-top: -5em;
+    padding: 0px;
+  }
+}

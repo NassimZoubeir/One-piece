@@ -1,3 +1,4 @@
+/* ---------------------------- MENU BURGER -----------------------------------------------*/
 const burger = document.querySelector(".burger");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelector(".nav-link");
@@ -9,7 +10,7 @@ burger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
     navLink.classList.toggle("mobile-menu");
 });
-
+/* ---------------------------- API -----------------------------------------------------*/
 // Connection à l'API //
 fetch("https://api.api-onepiece.com/characters")
 .then((response) => response.json())
@@ -59,11 +60,59 @@ fetch("https://api.api-onepiece.com/characters")
     });
   });
 
-
-
   /*------------------------------------------- API 2 ----------------------------------------------*/
  // Connection à l'API //
 //  fetch("https://api.jikan.moe/v4/manga/13/characters")
 //  .then((response) => response.json())
 //  .then((result) => console.log(result));
 
+/*------------------------------------------VALIDATION FORMULAIRE --------------------------------*/
+
+function validateForm() {
+  // Récupération de la valeur du champ Nom
+  var name = document.getElementById("name").value;
+
+  // Récupération de la date de naissance
+  var birthdate = document.getElementById("birthdate").value;
+
+  // Calcul de l'âge en années
+  var age = new Date().getFullYear() - new Date(birthdate).getFullYear();
+
+ // Récupération de l'email 
+  var email = document.getElementById("email").value;
+  
+  if (name == "") {
+      alert("Le champ Nom est obligatoire");
+      return false;
+  }
+  // Vérification de la longueur du champ Nom
+    if  (name.length < 3) {
+      alert("Le champ Nom doit contenir au moins 3 caractères");
+      return false;
+    }
+   
+    if (birthdate == "") {
+      alert("Le champ Date de naissance est obligatoire");
+      return false;
+  }
+    // Vérification de l'âge
+    if (age < 13) {
+      alert("Vous devez avoir au moins 13 ans pour vous inscrire");
+      return false;
+    }
+    
+    if (email == "") {
+        alert("Le champ Email est obligatoire");
+        return false;
+      }
+
+    // Vérification de l'email
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+    alert("Veuillez entrer un email valide");
+    return false;
+}  
+      alert("Félicitations vous êtes inscrit");
+      // Si l'email est valide, on peut soumettre le formulaire
+      return true;
+}  
