@@ -4,20 +4,20 @@ const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelector(".nav-link");
 
 burger.onclick = function () {
-    burger.classList.toggle("active");
+  burger.classList.toggle("active");
 }
 burger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    navLink.classList.toggle("mobile-menu");
+  navMenu.classList.toggle("active");
+  navLink.classList.toggle("mobile-menu");
 });
 /* ---------------------------- API -----------------------------------------------------*/
 // Connection à l'API //
 fetch("https://api.api-onepiece.com/characters")
-.then((response) => response.json())
-.then((result) => console.log(result));
+  .then((response) => response.json())
+  .then((result) => console.log(result));
 
 
-  fetch("https://api.api-onepiece.com/characters")
+fetch("https://api.api-onepiece.com/characters")
   .then((response) => response.json())
   .then((result) => {
     const characterSelect = document.getElementById("character-select");
@@ -31,9 +31,9 @@ fetch("https://api.api-onepiece.com/characters")
       characterSelect.appendChild(option);
     });
 
-     // Cacher la div character-info au début
-     characterInfo.style.display = "none";
-    
+    // Cacher la div character-info au début
+    characterInfo.style.display = "none";
+
     // Ajouter un événement change au select
     characterSelect.addEventListener("change", (event) => {
       const selectedCharacter = result.find(
@@ -50,8 +50,8 @@ fetch("https://api.api-onepiece.com/characters")
           <p>Job : ${selectedCharacter.job}</p>
           <p>Bounty : ${selectedCharacter.bounty} Berry</p>
         `;
-          // Afficher la div character-info
-          characterInfo.style.display = "block";
+        // Afficher la div character-info
+        characterInfo.style.display = "block";
       } else {
         // Si aucun personnage n'est sélectionné, effacer l'image et les informations
         characterInfo.innerHTML = "";
@@ -59,12 +59,6 @@ fetch("https://api.api-onepiece.com/characters")
       }
     });
   });
-
-  /*------------------------------------------- API 2 ----------------------------------------------*/
- // Connection à l'API //
-//  fetch("https://api.jikan.moe/v4/manga/13/characters")
-//  .then((response) => response.json())
-//  .then((result) => console.log(result));
 
 /*------------------------------------------VALIDATION FORMULAIRE --------------------------------*/
 
@@ -78,41 +72,41 @@ function validateForm() {
   // Calcul de l'âge en années
   var age = new Date().getFullYear() - new Date(birthdate).getFullYear();
 
- // Récupération de l'email 
+  // Récupération de l'email 
   var email = document.getElementById("email").value;
-  
+
   if (name == "") {
-      alert("Le champ Nom est obligatoire");
-      return false;
+    alert("Le champ Nom est obligatoire");
+    return false;
   }
   // Vérification de la longueur du champ Nom
-    if  (name.length < 3) {
-      alert("Le champ Nom doit contenir au moins 3 caractères");
-      return false;
-    }
-   
-    if (birthdate == "") {
-      alert("Le champ Date de naissance est obligatoire");
-      return false;
+  if (name.length < 3) {
+    alert("Le champ Nom doit contenir au moins 3 caractères");
+    return false;
   }
-    // Vérification de l'âge
-    if (age < 13) {
-      alert("Vous devez avoir au moins 13 ans pour vous inscrire");
-      return false;
-    }
-    
-    if (email == "") {
-        alert("Le champ Email est obligatoire");
-        return false;
-      }
+  // Vérification de la présence d'une date de naissance
+  if (birthdate == "") {
+    alert("Le champ Date de naissance est obligatoire");
+    return false;
+  }
+  // Vérification de l'âge
+  if (age < 13) {
+    alert("Vous devez avoir au moins 13 ans pour vous inscrire");
+    return false;
+  }
+  // Vérification de la présence d'un email
+  if (email == "") {
+    alert("Le champ Email est obligatoire");
+    return false;
+  }
 
-    // Vérification de l'email
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+  // Vérification de l'email
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
     alert("Veuillez entrer un email valide");
     return false;
-}  
-      alert("Félicitations vous êtes inscrit");
-      // Si l'email est valide, on peut soumettre le formulaire
-      return true;
+  }
+  // Si l'email est valide, on peut soumettre le formulaire
+  alert("Félicitations vous êtes inscrit");
+  return true;
 }  

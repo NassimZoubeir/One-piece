@@ -1,28 +1,28 @@
-*{
+* {
   text-decoration: none;
   list-style: none;
 }
+
 body {
-   margin: 0;
-   padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu {
-  background-color: #404040;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  width: 100%;
-  height: 100px;
-  box-sizing: border-box;
+    background-color: #404040;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    max-width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
- .nav-menu img {
+
+.nav-menu img {
   height: 4em;
-} 
-.title {
-  margin-right: 30em;
-} 
+}
 
 .burger {
   width: 35px;
@@ -47,8 +47,7 @@ body {
 
 }
 
-.burger span::before,
-.burger span::after {
+.burger span::before,.burger span::after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -85,16 +84,6 @@ body {
   display: none;
 }
 
-.nav-menu {
-
-  padding: 3em;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-  align-items: center;
-}
-
 .nav-menu a {
   color: rgba(255, 255, 255, 0.893);
   font-size: 20px;
@@ -103,10 +92,12 @@ body {
 .nav-menu .nav-link ul {
   display: flex;
 }
+
 .nav-menu .nav-link li {
   margin: 0 25px;
 
 }
+
 .nav-link {
   margin-left: -100%;
 }
@@ -114,57 +105,65 @@ body {
 @media screen and (max-width:800px) {
 
   .nav-link {
-      display: none;
-      top: 0;
-      left: 0;
-      position: absolute;
-      background-color: rgba(242, 229, 242, 0.457);
-      backdrop-filter: blur(7px);
-      width: 100%;
-      height: 100vh;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.5s ease;
+    display: none;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(242, 229, 242, 0.457);
+    backdrop-filter: blur(7px);
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
   }
+
   .nav-link.mobile-menu {
-      margin-left: 0;
+    margin-left: 0;
   }
+
   .nav-menu .nav-link ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .nav-menu .burger {
-      display: block;
-      margin-top: -1em;
+    display: block;
+    margin-top: -1em;
   }
+
   .nav-menu .nav-link li {
-      margin: 25px 0;
-      font-size: 1.5em;
+    margin: 25px 0;
+    font-size: 1.5em;
   }
+
   .nav-menu img {
     height: 3em;
-    margin-left: -35px;
-  } 
+  }
 }
 
-/* ------------------------------ SECTION 1 --------------------------------- */
- .welcome-section {
+/* ------------------------------ SECTION 1 HOME --------------------------------- */
+.welcome-section {
   margin-bottom: 50px;
 }
-h2, h3,.video-wrapper, .resume {
+
+h2,h3,.video-wrapper,.resume {
   text-align: center;
 }
+
 h2 {
   margin-bottom: 30px;
-  font-size: 2em ;
+  font-size: 2em;
 }
+
 h3 {
   margin-top: 50px;
   font-size: 1.5em;
 }
+
 .resume {
   margin-top: -20px;
   font-size: 1.4em;
@@ -204,7 +203,7 @@ h3 {
   height: 90%;
 }
 
-/* ---------------------------- SECTION 2 -----------------------------------*/ 
+/* ---------------------------- SECTION 2 PERSONNAGES -----------------------------------*/
 .character-section {
   display: flex;
   flex-direction: column;
@@ -230,14 +229,17 @@ h3 {
   font-size: 16px;
   margin: 5px 0;
 }
+
 .images {
   width: 100%;
 }
+
 .mer {
   display: block;
   height: 300px;
   width: 100%;
 }
+
 .sunny {
   height: 15em;
   margin-bottom: -10em;
@@ -247,17 +249,30 @@ h3 {
   .sunny {
     height: 10em;
     margin-top: 1em;
-    margin-bottom: -10em;
+    margin-bottom: -5em;
   }
-  h1,h2, h3 {
+  .sunny2 {
+    height: 10em;
+    margin-right: 80em;
+    margin-bottom: -5em;
+  }
+
+  .mer {
+    display: block;
+    height: 150px;
+    width: 100%;
+  }
+  h1,h2,h3 {
     font-size: 2em;
-  } 
+  }
+
   .resume {
     font-size: 1.2em;
   }
 }
-/* ------------------------------------ SECTION 3 -------------------------------------------- */
-.shop, h1 {
+
+/* ------------------------------------ SECTION 3 SHOP -------------------------------------------- */
+.shop,h1 {
   text-align: center;
 }
 
@@ -271,8 +286,8 @@ h3 {
 .item {
   border: 1px solid #ccc;
   padding: 10px;
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -286,6 +301,7 @@ h3 {
   font-weight: bold;
   margin-top: 10px;
 }
+
 .add-to-cart {
   display: block;
   margin-top: 10px;
@@ -309,6 +325,7 @@ h3 {
     align-items: center;
     flex-direction: column;
   }
+
   .item {
     width: 48%;
     margin-bottom: 20px;
@@ -323,17 +340,26 @@ h3 {
     align-items: center;
     flex-direction: column;
   }
+
   .item {
     width: 31%;
     margin-bottom: 20px;
   }
 }
+
 .sunny2 {
   height: 10em;
+  margin-top: 1em;
   margin-right: 80%;
-  margin-bottom: -10em;
+  margin-bottom: -7em;
 }
-/* ---------------------------- SECTION 4 ------------------------- */
+.mer2 {
+  display: block;
+  height: 200px;
+  width: 100%;
+}
+
+/* ---------------------------- SECTION 4 CONTACT ------------------------- */
 
 .form-section {
   background-image: url("/images/one-piece-personnage.jpg");
@@ -381,9 +407,30 @@ button {
 button:hover {
   background-color: #0052a3;
 }
+
 @media only screen and (max-width: 767px) {
   form {
     margin-top: -5em;
     padding: 0px;
+  }
+}
+
+/* ------------------------------ FOOTER ----------------------------------*/
+footer {
+  background-color: #404040;
+  color: #fff;
+  padding: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
   }
 }
