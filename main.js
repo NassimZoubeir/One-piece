@@ -1,13 +1,24 @@
 /* ---------------------------- MENU BURGER -----------------------------------------------*/
+// Sélectionne l'élément HTML avec la classe "burger" et le stocke dans une variable appelée "burger"
 const burger = document.querySelector(".burger");
+
+// Sélectionne l'élément HTML avec la classe "nav-menu" et le stocke dans une variable appelée "navMenu"
 const navMenu = document.querySelector(".nav-menu");
+
+// Sélectionne l'élément HTML avec la classe "nav-link" et le stocke dans une variable appelée "navLink"
 const navLink = document.querySelector(".nav-link");
 
+// Ajoute une fonction de basculement ("toggle") à l'élément HTML "burger" lorsqu'il est cliqué
 burger.onclick = function () {
   burger.classList.toggle("active");
 }
+
+// Ajoute une fonction à l'élément HTML "burger" lorsqu'il est cliqué
 burger.addEventListener("click", () => {
+  // Bascule la classe "active" sur l'élément HTML "navMenu"
   navMenu.classList.toggle("active");
+
+  // Bascule la classe "mobile-menu" sur l'élément HTML "navLink"
   navLink.classList.toggle("mobile-menu");
 });
 /* ---------------------------- API -----------------------------------------------------*/
