@@ -380,7 +380,7 @@ h3 {
 /* ---------------------------- SECTION 4 CONTACT ------------------------- */
 
 .form-section {
-  background-image: url("/images/one-piece-personnage.jpg");
+  background-image: url("images/one-piece-personnage.jpg");
   background-size: cover;
   background-position: center;
   height: 50em;
