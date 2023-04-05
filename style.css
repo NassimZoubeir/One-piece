@@ -146,6 +146,11 @@ body {
   .nav-menu img {
     height: 3em;
   }
+  .nav-menu a {
+    color: rgba(0, 0, 0, 0.893);
+    font-size: 25px;
+    font-weight: bold;
+  }
 }
 
 /* ------------------------------ SECTION 1 HOME --------------------------------- */
