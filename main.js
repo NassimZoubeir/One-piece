@@ -12,57 +12,101 @@ burger.addEventListener("click", () => {
 });
 /* ---------------------------- API -----------------------------------------------------*/
 // Connection à l'API //
-// fetch("https://api.api-onepiece.com/characters")
-//   .then((response) => response.json())
-//   .then((result) => console.log(result));
-
-// fetch("https://api.jikan.moe/v4/manga/13/characters")
-//   .then((response) => response.json())
-//   .then((result) => console.log(result));  
-
-
-fetch("https://api.api-onepiece.com/characters")
+fetch("https://api.jikan.moe/v4/manga/13/characters")
   .then((response) => response.json())
-  .then((result) => {
-    const characterSelect = document.getElementById("character-select");
-    const characterInfo = document.getElementById("character-info");
+  .then((result) => console.log(result));  
 
-    // Ajouter les options de personnage au select
-    result.forEach((character) => {
-      const option = document.createElement("option");
-      option.value = character.french_name;
-      option.text = character.french_name;
-      characterSelect.appendChild(option);
-    });
+// Récupérer l'élément select
+const selectElement = document.getElementById('character-select');
 
-    // Cacher la div character-info au début
-    characterInfo.style.display = "none";
+// Faire l'appel API
+fetch('https://api.jikan.moe/v4/manga/13/characters')
+  .then(response => response.json())
+  .then(data => {
+    // Boucler sur chaque personnage et créer une option pour chaque
+    data.data.forEach(character => {
+      // Récupérer le nom et l'image du personnage
+      const name = character.character.name;
+      const imageUrl = character.character.images.jpg.image_url;
 
-    // Ajouter un événement change au select
-    characterSelect.addEventListener("change", (event) => {
-      const selectedCharacter = result.find(
-        (character) => character.french_name === event.target.value
-      );
+      // Créer une nouvelle option avec le nom du personnage
+      const option = document.createElement('option');
+      option.value = name;
+      option.textContent = name;
 
-      if (selectedCharacter) {
+      // Ajouter l'option au select
+      selectElement.appendChild(option);
 
-        // Afficher les informations du personnage
-        characterInfo.innerHTML = `
-          <h3>${selectedCharacter.french_name}</h3>
-          <img src="https://api.jikan.moe/v4/manga/13/characters/${selectedCharacter.api_id}/image" alt="${selectedCharacter.french_name}">
-          <p>Âge : ${selectedCharacter.age}</p>
-          <p>Job : ${selectedCharacter.job}</p>
-          <p>Bounty : ${selectedCharacter.bounty} Berry</p>
+      // Ajouter un gestionnaire d'événement pour l'événement change du select
+      selectElement.addEventListener('change', () => {
+        // Récupérer la div d'affichage
+        const displayDiv = document.getElementById('character-display');
+
+        // Récupérer le nom du personnage sélectionné
+        const selectedName = selectElement.value;
+
+        // Trouver le personnage correspondant dans la liste des personnages
+        const selectedCharacter = data.data.find(character => character.character.name === selectedName);
+
+        // Récupérer l'image du personnage
+        const selectedImageUrl = selectedCharacter.character.images.jpg.image_url;
+
+        // Créer le contenu HTML à afficher
+        const html = `
+          <img src="${selectedImageUrl}" alt="${selectedName}">
+          <h1>${selectedName}</h1>
+      
         `;
-        // Afficher la div character-info
-        characterInfo.style.display = "block";
-      } else {
-        // Si aucun personnage n'est sélectionné, effacer l'image et les informations
-        characterInfo.innerHTML = "";
-        characterInfo.style.display = "none";
-      }
+
+        // Afficher le contenu HTML dans la div
+        displayDiv.innerHTML = html;
+      });
     });
-  });
+  })
+  .catch(error => console.error(error));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*------------------------------------------VALIDATION FORMULAIRE --------------------------------*/
 
