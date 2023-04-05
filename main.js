@@ -12,9 +12,13 @@ burger.addEventListener("click", () => {
 });
 /* ---------------------------- API -----------------------------------------------------*/
 // Connection à l'API //
-fetch("https://api.api-onepiece.com/characters")
-  .then((response) => response.json())
-  .then((result) => console.log(result));
+// fetch("https://api.api-onepiece.com/characters")
+//   .then((response) => response.json())
+//   .then((result) => console.log(result));
+
+// fetch("https://api.jikan.moe/v4/manga/13/characters")
+//   .then((response) => response.json())
+//   .then((result) => console.log(result));  
 
 
 fetch("https://api.api-onepiece.com/characters")
