@@ -76,8 +76,46 @@ fetch('https://api.jikan.moe/v4/manga/13/characters')
   })
   .catch(error => console.error(error));
 
+/* ------------------------- AJOUT AU PANIER -----------------------------------------*/
 
+// let cart = []; // tableau vide pour stocker les éléments du panier
 
+// // sélectionnez tous les boutons "Ajouter au panier"
+// let addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+// // ajouter un gestionnaire d'événements à chaque bouton "Ajouter au panier"
+// addToCartButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     let item = {
+//       id: button.parentElement.dataset.id,
+//       name: button.parentElement.querySelector('img').alt,
+//       price: button.parentElement.querySelector('.price').innerText
+//     };
+//     cart.push(item); // ajouter l'élément sélectionné au panier
+//     console.log(cart); // afficher le panier dans la console pour vérifier
+//   });
+// });
+
+// Récupération des boutons "Ajouter au panier"
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+// Fonction qui sera exécutée lorsqu'un bouton "Ajouter au panier" est cliqué
+function addToCartClicked(event) {
+  // Empêcher le comportement par défaut du bouton
+  event.preventDefault();
+  // Récupération de l'élément parent du bouton pour obtenir les informations sur le produit
+  const item = event.target.parentElement;
+  // Récupération du nom et du prix du produit
+  const itemName = item.querySelector('img').alt;
+  const itemPrice = item.querySelector('.price').textContent;
+  // Affichage de l'alerte indiquant que le produit a été ajouté au panier
+  alert(`Vous avez ajouté "${itemName}" au panier pour un montant de ${itemPrice}.`);
+}
+
+// Ajout d'un écouteur d'événements pour chaque bouton "Ajouter au panier"
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', addToCartClicked);
+});
 
 
 
