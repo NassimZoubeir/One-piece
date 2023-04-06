@@ -433,10 +433,23 @@ button:hover {
     padding: 0px;
   }
   .form-container {
-    padding: 13.2em;
+    padding: 14.4em;
+  }
+  label {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  }
 }
-}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .form-container {
+    padding: 15em;
+  }
+  label {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  }
 
+}
 /* ------------------------------ FOOTER ----------------------------------*/
 footer {
   background-color: #404040;
