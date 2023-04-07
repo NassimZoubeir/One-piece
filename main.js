@@ -25,7 +25,7 @@ burger.addEventListener("click", () => {
 // Connection à l'API //
 fetch("https://api.jikan.moe/v4/manga/13/characters")
   .then((response) => response.json())
-  .then((result) => console.log(result));  
+  .then((result) => console.log(result));
 
 // Récupérer l'élément select
 const selectElement = document.getElementById('character-select');
