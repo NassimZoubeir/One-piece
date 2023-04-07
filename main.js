@@ -99,46 +99,6 @@ addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCartClicked);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------------------------------VALIDATION FORMULAIRE --------------------------------*/
 
 function validateForm() {
