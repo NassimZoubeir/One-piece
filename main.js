@@ -78,24 +78,6 @@ fetch('https://api.jikan.moe/v4/manga/13/characters')
 
 /* ------------------------- AJOUT AU PANIER -----------------------------------------*/
 
-// let cart = []; // tableau vide pour stocker les éléments du panier
-
-// // sélectionnez tous les boutons "Ajouter au panier"
-// let addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-// // ajouter un gestionnaire d'événements à chaque bouton "Ajouter au panier"
-// addToCartButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     let item = {
-//       id: button.parentElement.dataset.id,
-//       name: button.parentElement.querySelector('img').alt,
-//       price: button.parentElement.querySelector('.price').innerText
-//     };
-//     cart.push(item); // ajouter l'élément sélectionné au panier
-//     console.log(cart); // afficher le panier dans la console pour vérifier
-//   });
-// });
-
 // Récupération des boutons "Ajouter au panier"
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
